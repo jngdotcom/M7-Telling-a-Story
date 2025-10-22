@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dvpewvoevfv4i"]
 
-[ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_6awxe"]
+[ext_resource type="Shader" uid="uid://cs15e2hgd2lan" path="res://assets/sliding_background.gdshader" id="1_6awxe"]
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_hs85k"]
 
 [resource]
