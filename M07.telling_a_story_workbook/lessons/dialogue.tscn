@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8o5qo3on08yk"]
+[gd_scene load_steps=7 format=3 uid="uid://b8o5qo3on08yk"]
 
+[ext_resource type="Theme" uid="uid://drays61pfu7xc" path="res://lessons/main_theme.tres" id="1_5dtme"]
 [ext_resource type="Shader" uid="uid://cs15e2hgd2lan" path="res://assets/sliding_background.gdshader" id="1_v8wjx"]
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_1cblk"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="3_rjqnu"]
@@ -21,6 +22,7 @@ offset_right = 17.0
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_5dtme")
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_rjqnu")
@@ -65,8 +67,9 @@ anchor_bottom = 1.0
 offset_left = 218.5
 offset_top = 413.0
 offset_right = -243.0
-offset_bottom = -404.0
+offset_bottom = -563.0
 grow_horizontal = 0
+theme = ExtResource("1_5dtme")
 text = "helloooooooo"
 
 [node name="NextButton" type="Button" parent="."]
