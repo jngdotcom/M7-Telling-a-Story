@@ -8,22 +8,22 @@ var expressions := {
 
 var dialogue_items: Array[Dictionary] = [
 	{
-	"expressions":expression["regular"],
+	"expression":expressions["sad"],
 	"text": "onefish"
 	},
 	
 	{
-	"expressions": expression["regular"],
+	"expression": expressions["regular"],
 	"text": "two fish"
 	},
 	
 	{
-	"expressions":expression["regular"],
+	"expression":expressions["regular"],
 	"text": "redfish blue"
 	},
 	
 	{
-	"expressions": expression["regular"],
+	"expression": expressions["regular"],
 	"text": "fish"
 	}
 ]
@@ -39,8 +39,6 @@ var current_item_index := 0
 
 
 
-
-
 func _ready() -> void:
 	show_text()
 	next_button.pressed.connect(advance)
@@ -53,7 +51,7 @@ func show_text() -> void:
 
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 1.2
+	var text_appearing_duration := 1.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1.2, text_appearing_duration)
 	
 	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
