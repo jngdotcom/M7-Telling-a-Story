@@ -82,7 +82,8 @@ offset_right = -243.0
 offset_bottom = -563.0
 grow_horizontal = 0
 theme = ExtResource("1_5dtme")
-text = "helloooooooo"
+bbcode_enabled = true
+text = "[b]helloooooooo"
 fit_content = true
 
 [node name="NextButton" type="Button" parent="."]

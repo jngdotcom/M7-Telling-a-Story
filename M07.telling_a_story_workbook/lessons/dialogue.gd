@@ -14,25 +14,25 @@ var bodies := {
 var dialogue_items: Array[Dictionary] = [
 	{
 	"expression":expressions["sad"],
-	"text": "onefish",
+	"text": "[shake]onefish",
 	"character": bodies["sophia"]
 	},
 	
 	{
 	"expression": expressions["regular"],
-	"text": "two fish",
+	"text": "[b]two fish",
 	"character": bodies["pink"]
 	},
 	
 	{
 	"expression":expressions["happy"],
-	"text": "redfish blue",
+	"text": "[rainbow]redfish blue",
 	"character":bodies["pink"]
 	},
 	
 	{
 	"expression": expressions["regular"],
-	"text": "fish",
+	"text": "[tornado freq=1.0]fish[/tornado]",
 	"character":bodies["sophia"]
 	}
 ]
