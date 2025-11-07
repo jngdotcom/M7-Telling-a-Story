@@ -51,4 +51,4 @@ func create_buttons() -> void:
 			expression.texture = expressions[current_expression]
 	)
 		
-	extends Control
+	

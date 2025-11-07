@@ -6,25 +6,34 @@ var expressions := {
 	"sad": preload("res://assets/emotion_sad.png")
 }
 
+var bodies := {
+	"sophia": preload("res://assets/sophia.png"),
+	"pink": preload("res://assets/pink.png")
+}
+
 var dialogue_items: Array[Dictionary] = [
 	{
 	"expression":expressions["sad"],
-	"text": "onefish"
+	"text": "onefish",
+	"character": bodies["sophia"]
 	},
 	
 	{
 	"expression": expressions["regular"],
-	"text": "two fish"
+	"text": "two fish",
+	"character": bodies["pink"]
 	},
 	
 	{
-	"expression":expressions["regular"],
-	"text": "redfish blue"
+	"expression":expressions["happy"],
+	"text": "redfish blue",
+	"character":bodies["pink"]
 	},
 	
 	{
 	"expression": expressions["regular"],
-	"text": "fish"
+	"text": "fish",
+	"character":bodies["sophia"]
 	}
 ]
 
@@ -47,17 +56,20 @@ func show_text() -> void:
 	var current_item := dialogue_items[current_item_index]
 	rich_text_label.text = current_item["text"]
 	expression.texture = current_item["expression"]
+	body.texture = current_item["character"]
 	
 
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 1.0
+	var text_appearing_duration: float = current_item["text"].length() / 30.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1.2, text_appearing_duration)
 	
 	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
 	var sound_start_position := randf() * sound_max_offset
 	audio_stream_player.play(sound_start_position)
 	tween.finished.connect(audio_stream_player.stop)
+	
+	slide_in()
 
 func advance() -> void:
 	current_item_index += 1
@@ -66,6 +78,13 @@ func advance() -> void:
 	else:
 		show_text()
 
-
-
+func slide_in() -> void:
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_QUART)
+	tween.set_ease(Tween.EASE_OUT)
+	body.position.x = 200.00
+	tween.tween_property(body, "position:x", 0.0, 0.3)
+	body.modulate.a = 0.0
+	tween.parallel().tween_property(body,"modulate:a", 1.0, 0.2)
+	
 	
